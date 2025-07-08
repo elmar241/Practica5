@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { BlogComponent } from "./components/blog/blog.component";
-import { INews } from './interfaces/inews.interface';
 
 @Component({
   selector: 'app-root',

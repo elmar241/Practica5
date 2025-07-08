@@ -1,0 +1,26 @@
+.formulario input, .formulario textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.noticia {
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.noticia img {
+  max-width: 100%;
+  height: auto;
+}
+
+.error {
+  color: red;
+}

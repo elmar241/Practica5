@@ -1,7 +1,20 @@
 <section class="formulario">
+    <input type="text" placeholder="Título" [(ngModel)]="newPost.titulo" />
+    <input type="text" placeholder="URL de la imagen" [(ngModel)]="newPost.imagen" />
+    <textarea placeholder="Cuerpo de la noticia" [(ngModel)]="newPost.cuerpo"></textarea>
+    <input type="date" [(ngModel)]="newPost.fecha" />
+
+    <button (click)="publicarNoticia()">Publicar noticia</button>
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
     
 </section>
-    <form action=""></form>
-<section class="noticias">
 
+<section class="noticias">
+    <h2>Noticias publicadas</h2>
+    <div class="noticia" *ngFor="let noticia of arrayNews">
+        <h3>{{ noticia.titulo }}</h3>
+        <img [src]="noticia.imagen" alt="Imagen de la noticia" />
+        <p>{{ noticia.cuerpo }}</p>
+        <small>Fecha: {{ noticia.fecha }}</small>
+    </div>
 </section>

@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { INews } from '../../interfaces/inews.interface';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-blog',
-  imports: [],
+  imports: [FormsModule, CommonModule],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'
 })
@@ -13,5 +15,26 @@ export class BlogComponent {
     {titulo: 'Entrega de la práctica 4', imagen: 'https://media.istockphoto.com/id/643285752/es/foto/lo-hemos-hecho-otra-vez.jpg?s=612x612&w=0&k=20&c=uoFllI0F-_rvZF22XLyvfRVASRgQu82m03yb_nbvBkg=', cuerpo: 'Con esta 2 entrega hemos puesto a prueba vuestros conocimientos de Javascript y el manejo de el DOM', fecha:'30 de junio de 2025'},
   ]
   
+  newPost: INews = {
+    titulo: '',
+    imagen: '',
+    cuerpo: '',
+    fecha: ''
+  };
+
+  errorMessage = '';
+
+  publicarNoticia() {
+    const { titulo, imagen, cuerpo, fecha } = this.newPost;
+
+    if (!titulo || !imagen || !cuerpo || !fecha) {
+      this.errorMessage = 'Todos los campos son obligatorios.';
+      return;
+    }
+
+    this.arrayNews.unshift({ ...this.newPost });
+    this.newPost = { titulo: '', imagen: '', cuerpo: '', fecha: '' };
+    this.errorMessage = '';
+  }
 
 }
