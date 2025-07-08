@@ -1,26 +1,137 @@
-.formulario input, .formulario textarea {
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 8px;
+/* General */
+* {
   box-sizing: border-box;
 }
 
-button {
-  padding: 10px 20px;
-  cursor: pointer;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
 }
 
-.noticia {
-  border: 1px solid #ccc;
+/* Contenedor principal de toda la SPA */
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Títulos */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* FORMULARIO */
+.formulario {
+  background-color: #e0f7fa; /* azul agua */
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 12px;
   margin-bottom: 15px;
-  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+  border-color: #00acc1;
+  outline: none;
+}
+
+.formulario button {
+  background-color: #00acc1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.formulario button:hover {
+  background-color: #008b9c;
+}
+
+.error {
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.success {
+  color: #388e3c;
+  font-weight: bold;
+}
+
+/* LISTADO DE NOTICIAS */
+.noticias {
+  width: 100%;
+}
+
+/* Grid de noticias en 3 columnas */
+.contenedor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+/* Tarjeta individual */
+.noticia {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  text-align: center; /* CENTRADO del contenido */
 }
 
 .noticia img {
   max-width: 100%;
   height: auto;
+  border-radius: 6px;
+  margin-bottom: 10px;
 }
 
-.error {
-  color: red;
+.noticia h3 {
+  margin: 10px 0 5px;
+}
+
+.noticia p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.noticia small {
+  display: block;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.noticia button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.noticia button:hover {
+  background-color: #d32f2f;
 }

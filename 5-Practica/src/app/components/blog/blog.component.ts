@@ -23,18 +23,30 @@ export class BlogComponent {
   };
 
   errorMessage = '';
+  successMessage = '';
 
   publicarNoticia() {
     const { titulo, imagen, cuerpo, fecha } = this.newPost;
 
     if (!titulo || !imagen || !cuerpo || !fecha) {
       this.errorMessage = 'Todos los campos son obligatorios.';
+      this.successMessage = '';
       return;
     }
 
     this.arrayNews.unshift({ ...this.newPost });
     this.newPost = { titulo: '', imagen: '', cuerpo: '', fecha: '' };
     this.errorMessage = '';
+    this.successMessage = '✅ Noticia publicada correctamente.';
+
+    // Eliminar mensaje de éxito tras 3 segundos
+    setTimeout(() => {
+      this.successMessage = '';
+    }, 3000);
+  }
+
+  eliminarNoticia(index: number) {
+    this.arrayNews.splice(index, 1);
   }
 
 }

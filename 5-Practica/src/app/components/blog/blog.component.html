@@ -6,15 +6,20 @@
 
     <button (click)="publicarNoticia()">Publicar noticia</button>
     <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+    <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
     
 </section>
 
 <section class="noticias">
     <h2>Noticias publicadas</h2>
-    <div class="noticia" *ngFor="let noticia of arrayNews">
-        <h3>{{ noticia.titulo }}</h3>
-        <img [src]="noticia.imagen" alt="Imagen de la noticia" />
-        <p>{{ noticia.cuerpo }}</p>
-        <small>Fecha: {{ noticia.fecha }}</small>
-    </div>
+    <div class="contenedor-grid">
+        <div class="noticia" *ngFor="let noticia of arrayNews; let i = index">
+            <h3>{{ noticia.titulo }}</h3>
+            <img [src]="noticia.imagen" alt="Imagen de la noticia" />
+            <p>{{ noticia.cuerpo }}</p>
+            <small>Fecha: {{ noticia.fecha }}</small>
+            <br />
+            <button (click)="eliminarNoticia(i)">Eliminar</button>
+        </div>
+  </div>
 </section>
