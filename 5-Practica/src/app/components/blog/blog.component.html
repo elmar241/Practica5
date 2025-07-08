@@ -3,7 +3,6 @@
     <input type="text" placeholder="URL de la imagen" [(ngModel)]="newPost.imagen" />
     <textarea placeholder="Cuerpo de la noticia" [(ngModel)]="newPost.cuerpo"></textarea>
     <input type="date" [(ngModel)]="newPost.fecha" />
-
     <button (click)="publicarNoticia()">Publicar noticia</button>
     <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
     <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
@@ -14,8 +13,8 @@
     <h2>Noticias publicadas</h2>
     <div class="contenedor-grid">
         <div class="noticia" *ngFor="let noticia of arrayNews; let i = index">
-            <h3>{{ noticia.titulo }}</h3>
             <img [src]="noticia.imagen" alt="Imagen de la noticia" />
+            <h3>{{ noticia.titulo }}</h3>
             <p>{{ noticia.cuerpo }}</p>
             <small>Fecha: {{ noticia.fecha }}</small>
             <br />

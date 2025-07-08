@@ -9,6 +9,4 @@ import { BlogComponent } from "./components/blog/blog.component";
 })
 export class App {
   protected title = '5-Practica';
-  
-
 }

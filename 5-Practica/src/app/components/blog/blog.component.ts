@@ -39,7 +39,6 @@ export class BlogComponent {
     this.errorMessage = '';
     this.successMessage = '✅ Noticia publicada correctamente.';
 
-    // Eliminar mensaje de éxito tras 3 segundos
     setTimeout(() => {
       this.successMessage = '';
     }, 3000);
